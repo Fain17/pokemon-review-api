@@ -6,7 +6,7 @@ pipeline {
     }
   }
   options{
-     buildDiscarder(logRotator(numToKeepStr: '3'))
+     buildDiscarder(logRotator(numToKeepStr: '2'))
    //       skipDefaultCheckout(true)
       }
   //tools{
@@ -69,6 +69,7 @@ pipeline {
         }
       }
     }
+    /*
     stage('Update Deployment File') {
         environment {
             GIT_REPO_NAME = "test-repo"
@@ -93,5 +94,6 @@ pipeline {
             }
         }
     }
+    */
   }
 }
