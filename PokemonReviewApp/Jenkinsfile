@@ -69,7 +69,7 @@ pipeline {
         }
       }
     }
-    /*
+    
     stage('Update Deployment File') {
         environment {
             GIT_REPO_NAME = "test-repo"
@@ -83,10 +83,10 @@ pipeline {
                     git config --global --add safe.directory /var/lib/jenkins/workspace/test
                     git config --global user.email "xyz@gmail.com"
                     git config --global user.name "Fain17"
-                    sed -i "s/${P_BUILD_NUMBER}/${BUILD_NUMBER}/g" App-manifests/deployment.yml
+                    sed -i "s/${P_BUILD_NUMBER}/${BUILD_NUMBER}/g" App-manifests/deployment.yaml
                     P_BUILD_NUMBER=${BUILD_NUMBER}
                     chown -R root App-manifests/deployment.yml
-                    git add App-manifests/deployment.yml
+                    git add App-manifests/deployment.yaml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                    
@@ -94,6 +94,6 @@ pipeline {
             }
         }
     }
-    */
+    
   }
 }
