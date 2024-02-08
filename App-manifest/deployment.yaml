@@ -1,1 +1,21 @@
-test
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pokemon-app
+  labels:
+    app: pokemon-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: pokemon-app
+  template:
+    metadata:
+      labels:
+        app: pokemon-app
+    spec:
+      containers:
+      - name: pokemon-app
+        image: fain17/pokemonapi-cicd:0
+        ports:
+        - containerPort: 5046
