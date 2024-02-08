@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: pokemon-app
-        image: fain17/pokemonapi-cicd:1
+        image: fain17/pokemonapi-cicd:2
         ports:
         - containerPort: 5046
